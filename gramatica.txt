@@ -1,0 +1,56 @@
+LEXICO:
+    CrearDB
+    EliminarDB
+    CrearColeccion
+    EliminarColeccion
+    InsertarUnico
+    ActualizarUnico
+    EliminarUnico
+    BuscarTodo
+    BuscarUnico
+    nueva
+    (
+    )
+    ;
+    =
+    ID -> [a-z_A-Z_][a-z_A-Z_0-9]*
+    NUMERO -> [0-9]+
+    STRING -> "[^"]*"
+    IGNORE -> \t\r
+    COMENTARIOS -> //.*
+                | /\*([^*]|\*+[^*/])*\*+/
+    "
+
+SINTACTICO:
+    init : instrucciones
+
+    instrucciones : instruccion instrucciones
+                | instruccion
+
+    instruccion : crearDB ;
+                | eliminarDB ; 
+                | crearColeccion ;
+                | eliminarColeccion ;
+                | insertarUnico ;
+                | actualizarUnico ;
+                | eliminarUnico ;
+                | buscarTodo ;
+                | buscarUnico ;
+
+    crearDB : CrearDB ID = nueva CrearDB ( )
+
+    eliminarDB : EliminarDB ID = nueva EliminarDB ( )
+
+    crearColeccion : CrearColeccion ID = nueva CrearColeccion ( STRING )
+
+    eliminarColeccion : EliminarColeccion ID = nueva EliminarColeccion ( STRING )
+
+    insertarUnico : InsertarUnico ID = nueva InsertarUnico ( STRING , STRING )
+
+    actualizarUnico : ActualizarUnico ID = nueva ActualizarUnico ( STRING , STRING )
+
+    eliminarUnico : EliminarUnico ID = nueva EliminarUnico ( STRING )
+
+    buscarTodo : BuscarTodo ID = nueva BuscarTodo ( STRING )
+
+    buscarUnico : BuscarUnico ID = nueva BuscarUnico ( STRING )

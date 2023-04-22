@@ -1,0 +1,86 @@
+{ ?
+    {
+        "Operacion":"Multiplicacion"
+        "Valor1":3
+        "Valor2":15
+    }, *
+    {
+        "Operacion":"Multiplicacion" ^
+        "Valor1":[
+            "Operacion":"Potencia"
+            "Valor1":2
+            "Valor2":[
+        "Operacion":"Raiz"
+        "Valor1":9
+        "Valor2":2
+                ]
+        ]
+        "Valor2": [
+            "Operacion":"Potencia"
+            "Valor1":2
+            "Valor2":[
+                "Operacion":"Raiz"
+                "Valor1":9
+                "Valor2":2
+                ]
+        ] +
+    },
+    {
+        "Operacion":"Suma"
+        "Valor1":[
+        "Operacion":"Seno"
+        "Valor1":90
+        ]
+        "Valor2":5.32
+    },
+    {
+        "Operacion":"Resta"
+        "Valor1": [
+            "Operacion": "Division"
+            "Valor1": 500
+            "Valor2": [
+                "Operacion": "Division"
+                "Valor1": 10
+                "Valor2": 5
+            ]
+        ]
+        "Valor2": [
+            "Operacion": "Multiplicacion"
+            "Valor1": 10
+            "Valor2": [
+                "Operacion": "Multiplicacion"
+                "Valor1": 3
+                "Valor2": 5
+            ]
+        ]
+    },
+    {
+        "Operacion":"Seno"
+        "Valor1": [
+            "Operacion": "Division"
+            "Valor1": 500
+            "Valor2": [
+                "Operacion": "Division"
+                "Valor1": 10
+                "Valor2": 5
+            ]
+        ]
+    },
+    {
+        "Operacion":"Tangente"
+        "Valor1": [
+            "Operacion": "Resta"
+            "Valor1": 20
+            "Valor2": [
+                "Operacion": "Suma"
+                "Valor1": 10
+                "Valor2": 5
+            ]
+        ]
+    },
+    "Texto":"Calificacion Proyecto 1"
+    "Color-Fondo-Nodo":"Azul"
+    "Color-Fuente-Nodo":"#FFFFFF"
+    "Forma-Nodo":"Circulo"
+    @
+}
